@@ -1,4 +1,4 @@
-## DAy 17 Review - pulling Sinatra, DB, Ruby together
+## Dy 17 Review - pulling Sinatra, DB, Ruby together
 
 ## Shoos
 

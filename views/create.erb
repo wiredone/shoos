@@ -1,0 +1,13 @@
+
+<h2> Order Confirmation </h2>
+<%= @preorder.pretty_name() %>
+
+<h3> Address </h3>
+<%= @preorder.address1 %> </br>
+<%= @preorder.street %> </br>
+<%= @preorder.city %> </br>
+<%= @preorder.postcode %> </br>
+
+<h3> style: size: quantity </h3>
+<%= @preorder.style %> :  <%= @preorder.size %> : <%= @preorder.quantity %>
+<p> Thanks <%= @preorder.first_name %> for yer custom </p>

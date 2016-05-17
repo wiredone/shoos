@@ -1,0 +1,30 @@
+#!/Users/user/.rbenv/shims/ruby
+require( 'pg' )
+
+
+begin
+
+  con = PG.connect :dbname => 'shoos', :user => 'user'
+
+      con.exec "DROP TABLE IF EXISTS preorders CASCADE"
+      con.exec "CREATE TABLE preorders(
+                             Id SERIAL4 PRIMARY KEY,
+                             First_Name VARCHAR(255),
+                             Last_Name VARCHAR(255),
+                             Address1 VARCHAR(255),
+                             street   VARCHAR(255),
+                             city     VARCHAR(255),
+                             county   VARCHAR(255),
+                             postcode VARCHAR(255),
+                             style VARCHAR(255),
+                             size int4,
+                             quantity int4
+                            )"
+
+
+
+ensure
+
+  con.close if con
+
+end

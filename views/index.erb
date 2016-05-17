@@ -1,0 +1,10 @@
+<h2> Shoo Pre-Orders</h2>
+
+<% @preorders.each do |preorder| %>
+ <b>Name:</b>
+ <p><%= preorder.pretty_name() %></p>
+
+<b>Order:</b>
+<p><%preorder.quantity %> x <%= preorder.style %></p>
+<hr>
+<% end %>
