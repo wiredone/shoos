@@ -3,9 +3,10 @@ require 'pg'
 
 class PreOrder
 
-  attr_reader :first_name, :last_name, :quantity, :style, :size, :address1, :street, :city, :county, :postcode
+  attr_reader :id, :first_name, :last_name, :quantity, :style, :size, :address1, :street, :city, :county, :postcode
 
   def initialize(options)
+    @id = options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @style = options['style']
@@ -29,14 +30,14 @@ class PreOrder
     return result
   end
 
-  #def self.all
-  #  db = PG.connect( {dbname: 'pizza_shop', host: 'localhost'} )
-  #  sql = "select * from pizzas"
-  #  pizzas = db.exec( sql)
-  #  result = pizzas.map { |pizza| Pizza.new( pizza)}
-  #  db.close
-  #  return result
-
+  def self.all
+    db = PG.connect( {dbname: 'shoos', host: 'localhost'} )
+    sql = "select * from preorders"
+    preorders = db.exec( sql)
+    result = preorders.map { |preorder| PreOrder.new( preorder)}
+    db.close
+    return result
+  end
 
 
 end
